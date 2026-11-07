@@ -10,6 +10,20 @@ At the end you get downloadable reports: keyword strategy, competitive analysis,
 
 This repository is the complete source code, shared so anyone can run their own copy. **Everything you need to set it up is in the step-by-step guide below.**
 
+## Easiest way: let Claude set it up for you
+
+If you use **Claude Code** (claude.com/claude-code), it can do most of the setup for you:
+
+1. Click the green **Code** button on this page, then **Download ZIP**, and unzip it. You can also clone it if you know how.
+2. Open that folder in Claude Code.
+3. Type **`/setup`**, or just say *"Set this up for me."*
+
+Claude reads the instructions in [`CLAUDE.md`](CLAUDE.md), asks you a few questions, and handles the technical parts: settings files, secret values, the database setup and deploying. For the parts only you can do, it tells you exactly what to click: creating accounts, adding payment details, signing in and creating your API keys.
+
+Other AI coding assistants, like Cursor or Codex, can follow the same instructions through [`AGENTS.md`](AGENTS.md).
+
+Prefer to do it by hand? Everything is in the guide below.
+
 ---
 
 # Step-by-step setup guide
@@ -102,7 +116,7 @@ Both options need Supabase (Step 2) and Upstash (Step 3).
 
 ## Step 1: Get your own copy of the code
 
-**Option A needs your own copy on GitHub**, because Railway and Vercel deploy straight from a GitHub repository.
+**Option A needs your own copy on GitHub** when you set things up by hand, because Railway and Vercel deploy straight from a GitHub repository. If Claude is doing the setup for you, it can usually deploy from the downloaded folder instead.
 
 1. Create a free account at **github.com** if you don't have one, and sign in.
 2. At the top of this page, click the green **Use this template** button, then **Create a new repository**.
