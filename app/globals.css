@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --background: #0a1428;
+  --foreground: #ffffff;
+  --navy-deep: #0a1428;
+  --navy-dark: #1a2433;
+  --cyan-electric: #00d4ff;
+  --text-secondary: #a0a0a0;
+}
+
+body {
+  color: var(--foreground);
+  background: radial-gradient(circle at center, var(--navy-deep) 0%, #000000 100%);
+  background-attachment: fixed;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Glassmorphic panel utility - user-facing (dashboard, research, generate) */
+  .glass-panel {
+    background: rgba(26, 36, 51, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  /* Darker variant for research/progress panels - no white bleed */
+  .glass-panel-dark {
+    background: rgba(10, 20, 40, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Cyan glow utility */
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
+  }
+  
+  .glow-cyan-hover:hover {
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.25);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Scroll-fade: visible by default, animated only when JS adds .scroll-fade-ready */
+  .scroll-fade-ready {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  .scroll-fade-ready.scroll-fade-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
