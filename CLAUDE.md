@@ -64,7 +64,19 @@ This repo is a **self-hosted copy of the Research Automation Engine**: an AI res
 
 ### 1. Prerequisites
 
-- Node.js 20 or newer (`node -v`), npm and git. If Node is missing, have them install the **LTS** version from nodejs.org, then reopen the terminal.
+- **Node.js 20 or newer** (`node -v`) and npm.
+  - If Node is missing, have the user install the **LTS** version from nodejs.org.
+  - On Windows, warn them first that a Windows permission pop-up will appear and they should click **Yes**.
+  - After installing, your own terminal won't see `node` until its PATH is refreshed. Refresh it yourself:
+    - Windows PowerShell: `$env:Path = [Environment]::GetEnvironmentVariable('Path','Machine') + ';' + [Environment]::GetEnvironmentVariable('Path','User')`
+    - Mac: open a new shell
+  - If that doesn't work, ask the user to restart Claude Code.
+- **git is optional.** If it's missing, don't make the user install it just to get the code. Download the ZIP instead and unzip it:
+  - URL: `https://github.com/GabrielRamps/research-automation-engine/archive/refs/heads/main.zip`
+  - Windows: `Invoke-WebRequest` + `Expand-Archive`
+  - Mac: `curl -L -o` + `unzip`
+  - The folder unzips as `research-automation-engine-main`.
+- If npm warns that it skipped install scripts (for example for `esbuild`, `core-js` or `msgpackr-extract`), that's fine. The app builds and runs without them.
 - Confirm you're at the repo root (`package.json`, `worker/` and `supabase/` are present).
 
 ### 2. Database and login: Supabase

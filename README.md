@@ -306,7 +306,7 @@ Now replace the temporary `http://localhost:3000` placeholders with your real we
 
 You still need **Steps 2–4**: Supabase, Upstash and your secret values. Skip Railway and Vercel.
 
-1. **Install Node.js:** download the **LTS** version from **nodejs.org** and install it. Version 20 or newer works.
+1. **Install Node.js:** download the **LTS** version from **nodejs.org** and install it. Version 20 or newer works. On Windows, click **Yes** when Windows asks for permission. Close and reopen your terminal afterwards so it can find Node.
 2. **Open a terminal in the code folder.**
    - **Mac:** open Terminal, type `cd ` (with a space), drag the code folder onto the window, and press Enter.
    - **Windows:** open the code folder in File Explorer, click the address bar, type `powershell`, and press Enter.
@@ -414,7 +414,7 @@ Still stuck? In Vercel, the **Logs** tab shows website errors. In Railway, the *
 | `NEXT_PUBLIC_SITE_URL` | Yes | Same as above |
 | `RESEND_API_KEY` | No | For invite emails sent from the Admin Panel |
 | `EMAIL_FROM` | No | Sender for Resend emails. Defaults to Resend's test sender. |
-| `CLAUDE_MODEL` | No | Override the model used to check Claude keys. Default `claude-opus-4-6`. |
+| `CLAUDE_MODEL` | No | The main Claude model; in the website it's used to test your Claude key. Keep it the same as the worker's. Default `claude-opus-4-6`. |
 | `CLAUDE_KEY_CHECK_MODEL` | No | Model for the quick key health check. Default `claude-haiku-4-5-20251001`. |
 | `HIGHLEVEL_WEBHOOK_SECRET` | No | Lets a payment tool create accounts automatically. It sends `POST /api/provision` with `Authorization: Bearer <secret>` and `{"email": "..."}`. |
 
